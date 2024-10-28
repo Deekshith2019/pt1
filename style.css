@@ -1,0 +1,167 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ef6406;  /* Fallback color */
+    color: #10100f;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* For pseudo-element positioning */
+}
+
+/* Background Image with Transparent Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('swiggy.webp'); /* Background image */
+    background-size: cover;  /* Cover the entire viewport */
+    background-position: center;  /* Center the background image */
+    opacity: 0.5; /* Adjust opacity for transparency effect */
+    z-index: -1; /* Place it behind other content */
+}
+
+.navbar {
+    background-color: rgba(19, 236, 19, 0.8);  /* Semi-transparent orange */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;  /* Full width */
+    position: absolute; /* Positioned above the content */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+.order-selection {
+    margin: 30px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.9); /* Light blue with transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(232, 124, 2, 0.999);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+}
+
+.order-selection h2 {
+    font-size: 1.8em;
+    color: #0f0e0e;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#order-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Order Item Styles */
+.order-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-color: #e6f7ff;  /* Very light blue for order items */
+    width: 100%;  /* Full width of the parent */
+}
+
+.order-item:hover {
+    background-color: #d0ebff;  /* Slightly darker light blue on hover */
+    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.1);
+}
+
+.order-item:hover::after {
+    content: "→";
+    position: absolute;
+    right: 10px;
+    font-size: 1.2em;
+    color: #ff4500;
+    opacity: 1;
+}
+
+.order-item::after {
+    content: "→";
+    position: absolute;
+    right: 10px;
+    font-size: 1.2em;
+    color: #ff4500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Status Message */
+#order-status-message {
+    color: #333;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accept {
+    background-color: #28a745;  /* Green */
+    color: #fff;
+}
+
+.accept:hover {
+    background-color: #218838;
+}
+
+.decline {
+    background-color: #dc3545;  /* Red */
+    color: #fff;
+}
+
+.decline:hover {
+    background-color: #c82333;
+}
+
+/* Order Notification in Agent Page */
+.order-notification {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.9); /* Light blue with transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.order-notification h2 {
+    font-size: 1.8em;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+#status-message {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
